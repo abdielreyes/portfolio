@@ -123,7 +123,7 @@ export function PrintableResume({ resume }: PrintableResumeProps) {
               Experience
             </h2>
             <div className="space-y-4 sm:space-y-5">
-              {resume.work.map((job, index) => (
+              {resume.work.slice(0, 3).map((job, index) => (
                 <article
                   key={`${job.name}-${job.position}-${index}`}
                   className="resume-job"
