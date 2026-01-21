@@ -1,0 +1,205 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Abdiel Reyes",
+    "label": "Backend & Cloud Engineer",
+    "email": "abdiel@abdielreyes.com",
+    "summary": "Backend engineer building scalable systems at BBVA. Experienced in cloud architecture, microservices, and full-stack development. Passionate about creating high-impact solutions that solve real problems.",
+    "location": {
+      "city": "Mexico City",
+      "countryCode": "MX"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "abdielreyes",
+        "url": "https://github.com/abdielreyes"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "eabdielreyesr",
+        "url": "https://www.linkedin.com/in/eabdielreyesr"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "BBVA",
+      "location": "Mexico City",
+      "position": "Software Developer II - Brokerage House",
+      "startDate": "2024-03",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "Develop Java microservices processing financial transactions for Equities, Structured Notes, and Warrants trading platforms",
+        "Build batch processing pipelines with ControlM for high-volume daily transaction handling",
+        "Optimize distributed backend services for improved data transmission performance",
+        "Collaborate with business analysts to translate requirements into technical solutions"
+      ]
+    },
+    {
+      "name": "Opus Inspection",
+      "location": "Mexico City (Remote)",
+      "position": "Cloud Engineer (Contract)",
+      "startDate": "2024-05",
+      "endDate": "2025-12",
+      "summary": "",
+      "highlights": [
+        "Architected AWS infrastructure (EC2, VPC, S3, RDS) for state-wide vehicle inspection system",
+        "Implemented cost optimization strategies through right-sizing instances and auto-scaling policies",
+        "Built CI/CD pipeline with GitHub Actions and Jenkins for streamlined deployments",
+        "Configured VPN and network security ensuring zero security incidents"
+      ]
+    },
+    {
+      "name": "2BCORE",
+      "location": "Mexico City",
+      "position": "Infrastructure & Cloud Manager",
+      "startDate": "2023-10",
+      "endDate": "2024-03",
+      "summary": "",
+      "highlights": [
+        "Led IT infrastructure management including Microsoft 365, Active Directory, and endpoint security",
+        "Drove ISO 27001 certification by implementing security controls and documentation",
+        "Improved IT support efficiency through documentation and automated provisioning"
+      ]
+    },
+    {
+      "name": "Opus Inspection",
+      "location": "Mexico City (Remote)",
+      "position": "Full Stack Developer (Contract)",
+      "startDate": "2023-05",
+      "endDate": "2023-06",
+      "summary": "",
+      "highlights": [
+        "Developed internal quotation management system using Node.js, Express, and MongoDB",
+        "Built ticket tracking application with EJS templates for customer support management",
+        "Designed MongoDB schemas and REST APIs for internal business tools"
+      ]
+    },
+    {
+      "name": "2BCORE",
+      "location": "Mexico City",
+      "position": "Cybersecurity Intern",
+      "startDate": "2022-10",
+      "endDate": "2023-10",
+      "summary": "",
+      "highlights": [
+        "Conducted vulnerability assessments and penetration tests on web applications",
+        "Performed network infrastructure security audits with documented remediation steps",
+        "Developed internal security testing scripts in Python for automated assessments"
+      ]
+    },
+    {
+      "name": "Shastic",
+      "location": "Remote",
+      "position": "Ruby Developer (Trainee)",
+      "startDate": "2021-08",
+      "endDate": "2022-02",
+      "summary": "",
+      "highlights": [
+        "Developed web applications using Ruby on Rails with Test-Driven Development methodology",
+        "Wrote comprehensive RSpec test suites for code quality assurance",
+        "Collaborated with senior developers in code reviews and agile sprint planning"
+      ]
+    },
+    {
+      "name": "Ecultum (Freelance)",
+      "location": "Remote - Client in Spain",
+      "position": "WordPress Developer",
+      "startDate": "2020-06",
+      "endDate": "2020-07",
+      "summary": "",
+      "highlights": [
+        "Built e-learning platform on WordPress with custom LMS functionality",
+        "Integrated Stripe payment gateway for course subscriptions and purchases",
+        "Configured multilingual support and optimized performance for European users"
+      ]
+    },
+    {
+      "name": "SisVox",
+      "location": "Mexico City",
+      "position": "Frontend Developer",
+      "startDate": "2018-08",
+      "endDate": "2019-05",
+      "summary": "",
+      "highlights": [
+        "Developed frontend interfaces using Vue.js with PHP CodeIgniter backend",
+        "Built responsive UI components and implemented client-side validation",
+        "Collaborated with backend team to design and consume RESTful APIs"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Instituto Politécnico Nacional (ESCOM)",
+      "area": "Computer Systems Engineering",
+      "studyType": "B.S.",
+      "location": "Mexico City",
+      "endDate": "2024-01",
+      "courses": [],
+      "highlights": [
+        "Capstone: Hydrometer - IoT disaster alert system using MQTT protocol and cloud infrastructure",
+        "1st Place, BBVA Hackathon 2023 - 'Green Calculator' category",
+        "Honorable Mention, Mexico's first Web3 Hackathon",
+        "Active CTF competitor with experience in penetration testing and cryptography"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "level": "Advanced",
+      "keywords": ["Java", "Spring Boot", "Node.js", "TypeScript", "Python", "Ruby on Rails", "Express", "REST APIs", "Microservices"]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "level": "Advanced",
+      "keywords": ["AWS (EC2, S3, RDS, VPC, Lambda)", "Docker", "Jenkins", "GitHub Actions", "CI/CD", "Linux", "Nginx"]
+    },
+    {
+      "name": "Databases",
+      "level": "Advanced",
+      "keywords": ["PostgreSQL", "MySQL", "OracleDB", "MongoDB", "Redis"]
+    },
+    {
+      "name": "Frontend",
+      "level": "Intermediate",
+      "keywords": ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      "name": "Security",
+      "level": "Intermediate",
+      "keywords": ["Penetration Testing", "Vulnerability Assessment", "OWASP", "Network Security", "ISO 27001"]
+    },
+    {
+      "name": "Other",
+      "level": "Intermediate",
+      "keywords": ["WordPress", "PHP", "Stripe API", "TDD", "Git"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "1st Place - BBVA Hackathon",
+      "date": "2023",
+      "awarder": "BBVA México",
+      "summary": "Won 'Green Calculator' category for environmental impact solution"
+    },
+    {
+      "title": "Honorable Mention - Web3 Hackathon",
+      "date": "2023",
+      "awarder": "Mexico Web3 Hackathon",
+      "summary": "Recognition for blockchain-based solution"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ]
+}

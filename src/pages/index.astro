@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Portfolio } from '../components/portfolio/Portfolio';
+import resumeData from '../data/resume.json';
+
+// JSON-LD for the portfolio homepage
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": resumeData.basics.name,
+    "jobTitle": resumeData.basics.label,
+    "description": resumeData.basics.summary,
+    "email": resumeData.basics.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": resumeData.basics.location?.city,
+      "addressCountry": resumeData.basics.location?.countryCode
+    },
+    "sameAs": resumeData.basics.profiles?.map(p => p.url) || [],
+    "knowsAbout": resumeData.skills.flatMap(s => s.keywords)
+  }
+};
+
+const pageTitle = `${resumeData.basics.name} | ${resumeData.basics.label}`;
+---
+
+<Layout title={pageTitle}>
+  <Fragment slot="head">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Additional SEO -->
+    <meta name="author" content={resumeData.basics.name} />
+    <meta name="keywords" content={`${resumeData.basics.label}, ${resumeData.skills.flatMap(s => s.keywords).slice(0, 15).join(", ")}`} />
+    <link rel="canonical" href="/" />
+  </Fragment>
+
+  <Portfolio resume={resumeData} client:load />
+</Layout>

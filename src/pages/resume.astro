@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { PrintableResume } from '../components/resume/PrintableResume';
+import resumeData from '../data/resume.json';
+
+// Generate JSON-LD structured data for SEO and ATS
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": resumeData.basics.name,
+  "jobTitle": resumeData.basics.label,
+  "description": resumeData.basics.summary,
+  "email": resumeData.basics.email,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": resumeData.basics.location?.city,
+    "addressCountry": resumeData.basics.location?.countryCode
+  },
+  "sameAs": resumeData.basics.profiles?.map(p => p.url) || [],
+  "knowsAbout": resumeData.skills.flatMap(s => s.keywords),
+  "hasOccupation": resumeData.work.map(job => ({
+    "@type": "Occupation",
+    "name": job.position,
+    "occupationLocation": {
+      "@type": "Organization",
+      "name": job.name,
+      "address": job.location
+    },
+    "startDate": job.startDate,
+    "endDate": job.endDate || undefined,
+    "description": job.highlights.join(". ")
+  })),
+  "alumniOf": resumeData.education.map(edu => ({
+    "@type": "EducationalOrganization",
+    "name": edu.institution,
+    "address": edu.location
+  }))
+};
+
+const pageTitle = `Resume | ${resumeData.basics.name} - ${resumeData.basics.label}`;
+const pageDescription = `Professional resume of ${resumeData.basics.name}, ${resumeData.basics.label}. ${resumeData.basics.summary}`;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Fragment slot="head">
+    <!-- JSON-LD Structured Data for SEO and ATS -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Additional SEO meta tags -->
+    <meta name="author" content={resumeData.basics.name} />
+    <meta name="keywords" content={resumeData.skills.flatMap(s => s.keywords).join(", ")} />
+
+    <!-- Open Graph for resume sharing -->
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content={resumeData.basics.name.split(" ")[0]} />
+    <meta property="profile:last_name" content={resumeData.basics.name.split(" ").slice(1).join(" ")} />
+  </Fragment>
+
+  <main class="pt-16">
+    <PrintableResume resume={resumeData} client:load />
+  </main>
+</Layout>

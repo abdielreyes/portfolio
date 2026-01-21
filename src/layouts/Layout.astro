@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import { Navigation } from '../components/portfolio/Navigation';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Backend & Cloud Engineer building scalable systems. Experienced in microservices, AWS, and full-stack development." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Print specific meta -->
+    <meta name="robots" content="index, follow" />
+
+    <title>{title}</title>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Dark mode script - prevents flash of wrong theme -->
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <!-- Additional head content from pages -->
+    <slot name="head" />
+  </head>
+  <body class="font-sans antialiased">
+    <Navigation currentPath={currentPath} client:load />
+    <slot />
+
+    <!-- Footer - Hidden when printing -->
+    <footer class="no-print py-6 sm:py-8 px-4 sm:px-6 border-t bg-muted/30">
+      <div class="container mx-auto max-w-4xl text-center text-xs sm:text-sm text-muted-foreground">
+        <p>&copy; {new Date().getFullYear()} Abdiel Reyes. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+</style>
