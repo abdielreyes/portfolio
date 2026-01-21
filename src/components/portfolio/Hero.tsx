@@ -77,7 +77,7 @@ export function Hero({ basics }: HeroProps) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full max-w-4xl mx-auto text-center pt-16 sm:pt-20 pb-8"
+        className="w-full max-w-4xl mx-auto text-center pt-4 sm:pt-20 pb-8"
       >
         <motion.div variants={itemVariants} className="mb-4 sm:mb-6">
           <motion.div
